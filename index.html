@@ -11,15 +11,22 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
     <h1 id="title">Month</h1>
     <h2 id="subtitle">Monthly Habit Tracker</h2>
+    </header>
    <!-- calendar area -->
    <section class="container">
     <div class="calendarPlusButton">
    <div id="calendarContainer">
     <div id="calendarDiv">
         <div id="calendarHeading">
+            <div class="iconFix">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
             <p id="habitTitle">My New Habit</p>
+            </div>
             <p id="totalDays">0/31</p>
         </div>
         <div id="calendarContent">
@@ -74,13 +81,15 @@
     </div>
 
    </div>
-   <button id="resetButton">Reset Button</button>
+   <button id="resetButton">Reset</button>
    </div>
-
+  
    <div class="notes">
-   <button id="showFormButton">Add Notes</button>
+  <div>
+      <button id="showFormButton">Add Notes</button>
 
-   <button id="clearNotesButton">Clear Notes</button>
+      <button id="clearNotesButton">Clear</button>
+    </div>  
    <div id="inputForm">
    <label for="textInput">Enter text:</label>
    <input type="text" id="textInput">
