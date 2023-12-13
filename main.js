@@ -170,6 +170,56 @@ for( let i = 0; i < currentDate; i ++ ){
    } 
 
 }
+//input form for note
+
+function showInputForm() {
+    document.getElementById('inputForm').style.display = 'block';
+  }
+  function saveText() {
+    const inputText = document.getElementById('textInput').value;
+    if (inputText.trim() !== '') {
+      const existingNotes = JSON.parse(localStorage.getItem('notes')) || [];
+      existingNotes.push(inputText);
+      localStorage.setItem('notes', JSON.stringify(existingNotes));
+      displayStoredNotes();
+      document.getElementById('inputForm').style.display = 'none';
+    } else {
+      alert('Please enter some text.');
+    }
+  }
+
+  
+  function displayStoredNotes() {
+    const storedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+    const displayArea = document.getElementById('displayArea');
+
+   
+    displayArea.innerHTML = '';
+
+   
+    storedNotes.forEach(note => {
+      const noteElement = document.createElement('div');
+      noteElement.textContent = `Note: ${note}`;
+      displayArea.appendChild(noteElement);
+    });
+  }
+
+  function clearNotes() {
+    localStorage.removeItem('notes');
+    displayStoredNotes(); // Update the display after clearing notes
+  }
+
+  
+  document.getElementById('showFormButton').addEventListener('click', showInputForm);
+  document.getElementById('saveButton').addEventListener('click', saveText);
+  document.getElementById('clearNotesButton').addEventListener('click', clearNotes);
+
+
+
+  displayStoredNotes();
+
+
+
 
 //reset button
 

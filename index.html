@@ -14,7 +14,8 @@
     <h1 id="title">Month</h1>
     <h2 id="subtitle">Monthly Habit Tracker</h2>
    <!-- calendar area -->
-
+   <section class="container">
+    <div class="calendarPlusButton">
    <div id="calendarContainer">
     <div id="calendarDiv">
         <div id="calendarHeading">
@@ -73,8 +74,25 @@
     </div>
 
    </div>
+   <button id="resetButton">Reset Button</button>
+   </div>
 
-    <button id="resetButton">Reset Button</button>
+   <div class="notes">
+   <button id="showFormButton">Add Notes</button>
+
+   <button id="clearNotesButton">Clear Notes</button>
+   <div id="inputForm">
+   <label for="textInput">Enter text:</label>
+   <input type="text" id="textInput">
+   <button id="saveButton">Save</button>
+   </div>
+
+
+   <div id="displayArea"></div>
+
+   <div id="outputValue1"></div>
+   </div>
+   </section>
 <script src="main.js"></script>
 </body>
 </html>
